@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:user.properties"/>
+
+<!--User-->
+    <bean id="userService"
+          class="service.UserService" autowire="byType">
+    </bean>
+    <bean id="userDAO"
+          class="dao.UserDAO" autowire="byType">
+    </bean>
+<!--Event-->
+    <bean id="eventService"
+          class="service.EventService"  autowire="byType">
+    </bean>
+    <bean id="eventDAO"
+          class="dao.EventDAO" autowire="byType">
+    </bean>
+<!--Ticket-->
+    <bean id="ticketService"
+          class="service.TicketService" autowire="byType">
+    </bean>
+    <bean id="ticketDAO"
+          class="dao.TicketDAO" autowire="byType">
+    </bean>
+
+    <bean id="bookingFacadeBean"
+          class="facade.BookingFacadeImpl">
+        <constructor-arg index="0" ref="userService"/>
+        <constructor-arg index="1" ref="eventService"/>
+        <constructor-arg index="2" ref="ticketService"/>
+    </bean>
+
+    <bean id="storageBean"
+          class="storage.Storage">
+    </bean>
+
+<!--    <bean id="eventBean"-->
+<!--          class="model.EventImpl">-->
+<!--    </bean>-->
+
+<!--    <bean id="ticketServiceBean"-->
+<!--          class="model.TicketImpl">-->
+<!--    </bean>-->
+
+</beans>
