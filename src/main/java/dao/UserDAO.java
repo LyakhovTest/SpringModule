@@ -19,4 +19,8 @@ public class UserDAO {
     public User findUserById(long id) {
         return storage.getuserById(id);
     }
+
+    public User createUser(String name, String email) {
+        return storage.addUser(name,email);
+    }
 }

@@ -29,12 +29,12 @@ public class BookingFacadeImpl implements BookingFacade{
 
     @Override
     public User getUserById(long userId) {
-      return null;
+      return userService.findUserById(userId);
     }
 
     @Override
     public Event getEventById(long eventId) {
-        return null;
+        return eventService.findEventById(eventId);
     }
 
     @Override
@@ -48,8 +48,8 @@ public class BookingFacadeImpl implements BookingFacade{
     }
 
     @Override
-    public Event createEvent(Event event) {
-        return null;
+    public Event createEvent(String event) {
+        return eventService.createEvent(event);
     }
 
     @Override
@@ -73,8 +73,8 @@ public class BookingFacadeImpl implements BookingFacade{
     }
 
     @Override
-    public User createUser(User user) {
-        return null;
+    public User createUser(String name, String email ) {
+        return userService.createUser(name,email);
     }
 
     @Override
@@ -89,7 +89,7 @@ public class BookingFacadeImpl implements BookingFacade{
 
     @Override
     public Ticket bookTicket(long userId, long eventId, int place, Ticket.Category category) {
-        return null;
+        return ticketService.bookingTicket(eventId, userId, category, place);
     }
 
     @Override

@@ -11,7 +11,11 @@ public class EventService {
         this.eventDAO = eventDAO;
     }
 
-    public Event findEventById(int id) {
+    public Event findEventById(long id) {
         return eventDAO.findEventById(id);
+    }
+
+    public Event createEvent(String name) {
+        return eventDAO.createEvent(name);
     }
 }

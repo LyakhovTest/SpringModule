@@ -10,7 +10,11 @@ public class EventDAO {
         this.storage = storage;
     }
 
-    public Event findEventById(int id) {
+    public Event findEventById(long id) {
         return storage.getEventById(id);
+    }
+
+    public Event createEvent(String name) {
+        return storage.addEvent(name);
     }
 }

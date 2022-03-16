@@ -14,4 +14,8 @@ public class TicketService {
     public Ticket findTicketById(long id){
         return ticketDAO.findTicketById(id);
     }
+
+    public Ticket bookingTicket(long eventId, long userId, Ticket.Category category, int place) {
+        return ticketDAO.bookingTicket(eventId, userId, category, place);
+    }
 }

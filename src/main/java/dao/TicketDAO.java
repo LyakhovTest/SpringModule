@@ -14,4 +14,8 @@ public class TicketDAO {
     public Ticket findTicketById(long id) {
         return storage.getTicketById(id);
     }
+
+    public Ticket bookingTicket(long eventId, long userId, Ticket.Category category, int place) {
+        return storage.addTicket(eventId, userId, category, place);
+    }
 }

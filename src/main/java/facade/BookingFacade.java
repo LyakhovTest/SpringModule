@@ -46,7 +46,7 @@ public interface BookingFacade {
      * @param event Event data.
      * @return Created Event object.
      */
-    Event createEvent(Event event);
+    Event createEvent(String event);
 
     /**
      * Updates event using given data.
@@ -86,10 +86,10 @@ public interface BookingFacade {
 
     /**
      * Creates new user. User id should be auto-generated.
-     * @param user User data.
+     //* @param user User data.
      * @return Created User object.
      */
-    User createUser(User user);
+    User createUser(String name, String email );
 
     /**
      * Updates user using given data.

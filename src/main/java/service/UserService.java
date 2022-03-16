@@ -14,4 +14,8 @@ public class UserService {
     public User findUserById(long id){
         return userDAO.findUserById(id);
     }
+
+    public User createUser(String name, String email){
+        return userDAO.createUser(name,email);
+    }
 }
