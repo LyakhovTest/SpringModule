@@ -18,4 +18,12 @@ public class EventService {
     public Event createEvent(String name) {
         return eventDAO.createEvent(name);
     }
+
+    public Event updateEvent(Event event) {
+        return eventDAO.updateEvent(event);
+    }
+
+    public boolean deleteEvent(long eventId) {
+        return eventDAO.deleteEvent(eventId);
+    }
 }

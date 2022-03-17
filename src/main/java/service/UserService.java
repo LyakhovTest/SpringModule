@@ -18,4 +18,16 @@ public class UserService {
     public User createUser(String name, String email){
         return userDAO.createUser(name,email);
     }
+
+    public User updateUser(User user) {
+        return userDAO.updateUser(user);
+    }
+
+    public boolean deleteUser(long userId) {
+        return userDAO.deleteUser(userId);
+    }
+
+    public User findUserByEmail(String email) {
+        return userDAO.findUserByEmail(email);
+    }
 }

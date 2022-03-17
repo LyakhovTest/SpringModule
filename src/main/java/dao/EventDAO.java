@@ -17,4 +17,12 @@ public class EventDAO {
     public Event createEvent(String name) {
         return storage.addEvent(name);
     }
+
+    public Event updateEvent(Event event) {
+        return storage.updateEvent(event);
+    }
+
+    public boolean deleteEvent(long eventId) {
+        return storage.deleteEvent(eventId);
+    }
 }

@@ -34,21 +34,21 @@ public class EventImpl implements Event{
 
     @Override
     public String getTitle() {
-        return null;
+        return title;
     }
 
     @Override
     public void setTitle(String title) {
-
+        this.title = title;
     }
 
     @Override
     public Date getDate() {
-        return null;
+        return date;
     }
 
     @Override
     public void setDate(Date date) {
-
+        this.date = date;
     }
 }

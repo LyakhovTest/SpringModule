@@ -38,41 +38,41 @@ public class TicketImpl implements Ticket{
 
     @Override
     public long getEventId() {
-        return 0;
+        return eventId;
     }
 
     @Override
     public void setEventId(long eventId) {
-
+        this.eventId = eventId;
     }
 
     @Override
     public long getUserId() {
-        return 0;
+        return userId;
     }
 
     @Override
     public void setUserId(long userId) {
-
+        this.userId = userId;
     }
 
     @Override
     public Category getCategory() {
-        return null;
+        return category;
     }
 
     @Override
     public void setCategory(Category category) {
-
+        this.category = category;
     }
 
     @Override
     public int getPlace() {
-        return 0;
+        return place;
     }
 
     @Override
     public void setPlace(int place) {
-
+        this.place = place;
     }
 }

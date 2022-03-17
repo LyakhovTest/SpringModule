@@ -16,6 +16,15 @@ public class TicketDAO {
     }
 
     public Ticket bookingTicket(long eventId, long userId, Ticket.Category category, int place) {
+
         return storage.addTicket(eventId, userId, category, place);
+    }
+
+    public boolean cancelTicket(long ticketId) {
+        return storage.cancelTicket(ticketId);
+    }
+
+    public Ticket getTicketById(long tickedId) {
+        return storage.getTicketById(tickedId);
     }
 }

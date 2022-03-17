@@ -12,9 +12,6 @@ import java.util.List;
  * Created by maksym_govorischev.
  */
 public interface BookingFacade {
-
-    void sayHello();
-
     /**
      * Gets event by its id.
      * @return Event.
@@ -140,5 +137,7 @@ public interface BookingFacade {
      * @return Flag whether anything has been canceled.
      */
     boolean cancelTicket(long ticketId);
+
+    Ticket getTicketById(long tickedId);
 
 }

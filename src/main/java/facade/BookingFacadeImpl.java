@@ -6,7 +6,6 @@ import model.User;
 import service.EventService;
 import service.TicketService;
 import service.UserService;
-
 import java.util.Date;
 import java.util.List;
 
@@ -14,12 +13,6 @@ public class BookingFacadeImpl implements BookingFacade{
     private UserService userService;
     private EventService eventService;
     private TicketService ticketService;
-
-
-    @Override
-    public void sayHello(){
-        System.out.println("Hello my dear");
-    }
 
     public BookingFacadeImpl(UserService userService, EventService eventService, TicketService ticketService) {
         this.userService = userService;
@@ -30,6 +23,46 @@ public class BookingFacadeImpl implements BookingFacade{
     @Override
     public User getUserById(long userId) {
       return userService.findUserById(userId);
+    }
+
+    @Override
+    public User getUserByEmail(String email) {
+        return userService.findUserByEmail(email);
+    }
+
+    @Override
+    public List<User> getUsersByName(String name, int pageSize, int pageNum) {
+        return null;
+    }
+
+    @Override
+    public User createUser(String name, String email ) {
+        return userService.createUser(name,email);
+    }
+
+    @Override
+    public User updateUser(User user) {
+        return userService.updateUser(user);
+    }
+
+    @Override
+    public boolean deleteUser(long userId) {
+        return userService.deleteUser(userId);
+    }
+
+    @Override
+    public Event createEvent(String event) {
+        return eventService.createEvent(event);
+    }
+
+    @Override
+    public Event updateEvent(Event event) {
+        return eventService.updateEvent(event);
+    }
+
+    @Override
+    public boolean deleteEvent(long eventId) {
+        return eventService.deleteEvent(eventId);
     }
 
     @Override
@@ -48,48 +81,12 @@ public class BookingFacadeImpl implements BookingFacade{
     }
 
     @Override
-    public Event createEvent(String event) {
-        return eventService.createEvent(event);
-    }
-
-    @Override
-    public Event updateEvent(Event event) {
-        return null;
-    }
-
-    @Override
-    public boolean deleteEvent(long eventId) {
-        return false;
-    }
-
-    @Override
-    public User getUserByEmail(String email) {
-        return null;
-    }
-
-    @Override
-    public List<User> getUsersByName(String name, int pageSize, int pageNum) {
-        return null;
-    }
-
-    @Override
-    public User createUser(String name, String email ) {
-        return userService.createUser(name,email);
-    }
-
-    @Override
-    public User updateUser(User user) {
-        return null;
-    }
-
-    @Override
-    public boolean deleteUser(long userId) {
-        return false;
-    }
-
-    @Override
     public Ticket bookTicket(long userId, long eventId, int place, Ticket.Category category) {
         return ticketService.bookingTicket(eventId, userId, category, place);
+    }
+
+    public Ticket getTicketById(long tickedId){
+        return ticketService.getTicketById(tickedId);
     }
 
     @Override
@@ -104,7 +101,7 @@ public class BookingFacadeImpl implements BookingFacade{
 
     @Override
     public boolean cancelTicket(long ticketId) {
-        return false;
+        return ticketService.cancelTicket(ticketId);
     }
 
 }

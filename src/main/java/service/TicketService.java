@@ -18,4 +18,12 @@ public class TicketService {
     public Ticket bookingTicket(long eventId, long userId, Ticket.Category category, int place) {
         return ticketDAO.bookingTicket(eventId, userId, category, place);
     }
+
+    public boolean cancelTicket(long ticketId) {
+        return ticketDAO.cancelTicket(ticketId);
+    }
+
+    public Ticket getTicketById(long tickedId) {
+        return ticketDAO.getTicketById(tickedId);
+    }
 }
