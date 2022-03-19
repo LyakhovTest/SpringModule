@@ -15,7 +15,7 @@ public class TicketService {
         return ticketDAO.findTicketById(id);
     }
 
-    public Ticket bookingTicket(long eventId, long userId, Ticket.Category category, int place) {
+    public Ticket bookingTicket(long eventId, long userId, Ticket.Category category, int place) throws Exception {
         return ticketDAO.bookingTicket(eventId, userId, category, place);
     }
 

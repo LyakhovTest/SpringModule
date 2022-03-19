@@ -3,6 +3,7 @@ package service;
 import dao.EventDAO;
 import dao.UserDAO;
 import model.Event;
+import model.EventImpl;
 
 public class EventService {
     private EventDAO eventDAO;

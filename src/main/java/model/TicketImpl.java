@@ -33,7 +33,7 @@ public class TicketImpl implements Ticket{
 
     @Override
     public void setId(long id) {
-
+        this.id=id;
     }
 
     @Override

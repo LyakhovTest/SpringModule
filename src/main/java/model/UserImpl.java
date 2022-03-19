@@ -27,17 +27,17 @@ public class UserImpl implements User{
 
     @Override
     public void setId(long id) {
-
+        this.id = id;
     }
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 
     @Override
     public void setName(String name) {
-
+        this.name=name;
     }
 
     @Override
@@ -47,6 +47,6 @@ public class UserImpl implements User{
 
     @Override
     public void setEmail(String email) {
-
+        this.email = email;
     }
 }

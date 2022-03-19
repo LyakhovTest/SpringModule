@@ -81,8 +81,14 @@ public class BookingFacadeImpl implements BookingFacade{
     }
 
     @Override
-    public Ticket bookTicket(long userId, long eventId, int place, Ticket.Category category) {
-        return ticketService.bookingTicket(eventId, userId, category, place);
+    public Ticket bookTicket(long userId, long eventId, int place, Ticket.Category category){
+        try {
+            return ticketService.bookingTicket(eventId, userId, category, place);
+        } catch (Exception e) {
+            System.out.println("ОШИБКА БРОНИРОВАНИЯ БИЛЕТА: билет" +
+                    " на данное мероприятие забронирован");
+        }
+        return null;
     }
 
     public Ticket getTicketById(long tickedId){

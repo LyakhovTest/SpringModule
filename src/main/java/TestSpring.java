@@ -31,6 +31,6 @@ public class TestSpring {
         BookingFacade bookingFacade = context.getBean("bookingFacadeBean",BookingFacade.class);
         bookingFacade.createUser("bent", "Tescha@sutaya.ei");
         bookingFacade.createEvent("Theatre");
-        bookingFacade.bookTicket(3, 3, 10, Ticket.Category.BAR);
+        //bookingFacade.bookTicket(3, 3, 10, Ticket.Category.BAR);
     }
 }
