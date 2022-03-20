@@ -7,16 +7,22 @@ import model.User;
 import org.junit.Test;
 import storage.Storage;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
 public class TicketServiceTest extends BasicIntegrationTest {
     TicketService ticketService = context.getBean("ticketService", TicketService.class);
     Storage storage = context.getBean("storageBean", Storage.class);
 
-//    @Test(expected = Exception.class)
-//    public void createAndDeleteEventTest() throws Exception {
-//        User newUser = storage.addUser("bent", "Tescha@sutaya.ei");
-//        Event newEvent = storage.addEvent("Theatre");
-//        Ticket newTicket = ticketService.bookingTicket(newEvent.getId(),newUser.getId(), Ticket.Category.STANDARD, 13);
-//        Ticket newTicket1 = ticketService.bookingTicket(newEvent.getId(),newUser.getId(), Ticket.Category.STANDARD, 13);
-//    }
+    @Test
+    public void createTicketTest() throws Exception {
+        //When
+        User createUser = storage.addUser("bent", "Tescha@sutaya.ei");
+        Event createEvent = storage.addEvent("Theatre");
+        Ticket newTicket = ticketService.bookingTicket(createUser.getId(), createEvent.getId(), Ticket.Category.BAR, 10);
+        //Then
+        assertEquals(createUser.getId(), newTicket.getUserId());
+        assertEquals(createEvent.getId(), newTicket.getEventId());
+    }
 }
 
